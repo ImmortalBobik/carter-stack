@@ -1,0 +1,114 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f5f1ea;
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.stage {
+  position: relative;
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+#tower {
+  display: block;
+  width: 100dvw;
+  height: 100dvh;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Whisper-minimal floating sky score — zero box, zero clutter */
+.sky-hud {
+  position: fixed;
+  top: clamp(22px, 5.5dvh, 56px);
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.sky-score {
+  font-size: clamp(3.2rem, 2.2rem + 4.2dvw, 5.4rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: rgba(34, 30, 26, 0.84);
+  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.7);
+}
+
+.sky-sub {
+  margin-top: 8px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(74, 66, 57, 0.64);
+}
+
+.mute-dot {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(34, 30, 26, 0.11);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
+  color: #6b655d;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  transition: color 140ms ease, background-color 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: color 140ms ease, background-color 140ms ease, border-color 140ms ease, box-shadow 140ms ease, scale 140ms ease-out;
+  }
+}
+
+.mute-dot:hover {
+  color: #1c1917;
+  background: #ffffff;
+  border-color: rgba(34, 30, 26, 0.24);
+  box-shadow: 0 4px 14px rgba(34, 30, 26, 0.12);
+}
+
+.mute-dot:active {
+  @media (prefers-reduced-motion: no-preference) {
+    scale: 0.94;
+  }
+}
+
+.mute-dot:focus-visible,
+#tower:focus-visible {
+  outline: 2px solid #d97757;
+  outline-offset: 3px;
+}
+
+@media (forced-colors: active) {
+  .mute-dot {
+    border: 1px solid CanvasText;
+  }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carter Stack</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <main class="stage">
+    <canvas id="tower" aria-label="Carter Stack 3D architectural stacking game. Click, tap, or press Space to drop each gliding slab cleanly onto the tower."></canvas>
+
+    <div class="sky-hud" aria-live="polite">
+      <div id="hud-score" class="sky-score">0</div>
+      <div id="hud-sub" class="sky-sub">TAP OR SPACE</div>
+    </div>
+
+    <button type="button" id="mute-btn" class="mute-dot" aria-label="Mute sound" title="Toggle sound">
+      <svg id="icon-on" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <path d="M15.5 8.5a5 5 0 0 1 0 7"></path>
+      </svg>
+      <svg id="icon-off" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden>
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <line x1="22" y1="9" x2="16" y2="15"></line>
+        <line x1="16" y1="9" x2="22" y2="15"></line>
+      </svg>
+    </button>
+  </main>
+</body>
+</html>
